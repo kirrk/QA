@@ -1,0 +1,36 @@
+<h1>Wiki</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question and Answers</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wikis.each do |wiki| %>
+      <tr>
+        <td><%= wiki.question %></td>
+        <td><%= link_to 'Show', wiki %></td>
+        <td><%= link_to 'Edit', edit_wiki_path(wiki) %></td>
+        <td><%= link_to 'Destroy', wiki, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+        <% @wikis.each do |wiki| %>
+      <tr>
+        <td><%= wiki.answer %></td>
+        <td><%= link_to 'Show', wiki %></td>
+        <td><%= link_to 'Edit', edit_wiki_path(wiki) %></td>
+        <td><%= link_to 'Destroy', wiki, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wiki', new_wiki_path %>

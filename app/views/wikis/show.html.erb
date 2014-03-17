@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @wiki.question %>
+</p>
+
+  <strong>Answer:</strong>
+  <%= @wiki.answer %>
+</p>
+
+<% @wiki.users.each do |user|   %>
+  <li>
+    <%= user.name  %>
+    <%= user.email %>
+  </li>
+<% end %>
+
+
+<%= link_to 'Edit', edit_wiki_path(@wiki) %> |
+<%= link_to 'Back', wikis_path %>
